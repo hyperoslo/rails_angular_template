@@ -102,18 +102,16 @@ end
 log "Add default route to routes.rb"
 route "root to: 'layouts#index'"
 
-if yes?("Setup Git and create initial commit?")
-  after_bundle do
-    log "Setting up git"
-    git :init
-    git add: "-A"
-    git commit: %Q{ -m 'Initial commit' }
-  end
-else
-  log "Skipping git"
-end
-
 after_bundle do
+  if yes?("Setup Git and create initial commit?")
+      log "Setting up git"
+      git :init
+      git add: "-A"
+      git commit: %Q{ -m 'Initial commit' }
+  else
+    log "Skipping git"
+  end
+
   run "spring stop"
   run "rails generate rspec:install"
   run "spring start"

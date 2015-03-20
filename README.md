@@ -6,8 +6,8 @@ Clone the repo and then use the option `-m angular_template/angular_template.rb`
 
 ###Example: 
 ```
-git clone https://github.com/hyperoslo/angular_template.git
-rails new my_project -m angular_template/angular_template.rb
+git clone https://github.com/hyperoslo/rails_angular_template.git
+rails new my_project -m rails_angular_template/template.rb
 ```
 
 ### Options

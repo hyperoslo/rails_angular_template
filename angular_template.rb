@@ -1,4 +1,6 @@
 
+slim_option = yes?("Install slim?")
+
 def source_paths
   [File.join(File.expand_path(File.dirname(__FILE__)),'templates')] + Array(super)
 end
@@ -18,6 +20,8 @@ gem 'angularjs-rails'
 gem 'ngannotate-rails'
 # This adds ui-routes for improved routes
 gem 'angular-ui-router-rails', git: 'https://github.com/iven/angular-ui-router-rails.git'
+
+gem 'slim'  if slim_option
 
 log "Adding additional develpment and test gems"
 gem_group :development, :test do

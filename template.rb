@@ -21,7 +21,7 @@ gem 'ngannotate-rails'
 # This adds ui-routes for improved routes
 gem 'angular-ui-router-rails', git: 'https://github.com/iven/angular-ui-router-rails.git'
 
-gem 'slim'  if slim_option
+gem 'slim-rails' if slim_option
 
 log "Adding additional develpment and test gems"
 gem_group :development, :test do

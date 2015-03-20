@@ -4,7 +4,7 @@ Rails application template setting up rails to work with angular. This template 
 # Usage
 Clone the repo and then use the option `-m angular_template/angular_template.rb` when you create a new rails project.
 
-Example: 
+###Example: 
 ```
 git clone https://github.com/hyperoslo/angular_template.git
 rails new my_project -m angular_template/angular_template.rb

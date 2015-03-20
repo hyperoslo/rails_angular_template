@@ -103,7 +103,8 @@ else
 end
 
 after_bundle do
-  log "You still need to install rspec, run: rails generate rspec:install"
-  #generate rspec:install
+  run "spring stop"
+  run "rails generate rspec:install"
+  run "spring start"
 end
 

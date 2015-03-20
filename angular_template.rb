@@ -60,10 +60,10 @@ gsub_file "app/assets/javascripts/application.js", /\/\/= require turbolinks\n/,
 gsub_file "app/views/layouts/application.html.erb", /, 'data-turbolinks-track' => true/, ''
 
 log "add ng-view and remove erb yield"
-insert_into_file 'app/views/layouts/application.html.erb', "<ng-view></ng-view>", after: "<body>"
+insert_into_file 'app/views/layouts/application.html.erb', "<ng-view></ng-view>", after: "<body>\n"
 
 log "Insert support for ui-routes"
-insert_into_file 'app/views/layouts/application.html.erb', "<ng-view></ng-view>", before: "</body>"
+insert_into_file 'app/views/layouts/application.html.erb', "<div ui-view></div>", before: "\n</body>"
 
 log "Create AngularJS directories and config file"
 inside 'app/assets/javascripts/angular' do

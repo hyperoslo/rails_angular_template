@@ -61,6 +61,7 @@ gsub_file "app/views/layouts/application.html.erb", /, 'data-turbolinks-track' =
 
 log "add ng-view and remove erb yield"
 insert_into_file 'app/views/layouts/application.html.erb', "<ng-view></ng-view>", after: "<body>\n"
+gsub_file "app/views/layouts/application.html.erb", /, '<%= yield %>/, ''
 
 log "Insert support for ui-routes"
 insert_into_file 'app/views/layouts/application.html.erb', "<div ui-view></div>", before: "\n</body>"

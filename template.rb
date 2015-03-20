@@ -84,6 +84,16 @@ inside 'app/assets/javascripts/angular' do
   end
 end
 
+log "Remove test folder and add generator defaults"
+insert_into_file 'config/application.rb', after: "# config.i18n.default_locale = :de\n" do
+  "  config.generators do |g|
+    g.stylesheets false
+    g.test_framework :rspec
+    g.fixture_replacement :factory_girl
+  end\n"
+end
+run 'rm -r test/'
+
 log "Create default controller"
 inside 'app/controllers' do
   template 'layouts_controller.rb'
